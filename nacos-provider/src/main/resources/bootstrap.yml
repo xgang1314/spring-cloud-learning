@@ -1,0 +1,12 @@
+#spring:
+#  application:
+#    name: nacos-provider
+#  profiles:
+#    active: dev
+#  cloud:
+#    nacos:
+#      config:
+#        server-addr: 192.168.140.120:8848
+#        file-extension: yml
+#        # prefix 默认为 spring.application.name 的值，也可以通过配置项 spring.cloud.nacos.config.prefix来配置。
+#        prefix: nacos-provider

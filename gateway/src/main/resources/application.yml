@@ -1,0 +1,42 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lower-case-service-id: true
+          enabled: true
+      routes:
+        - id: eureka-client-01
+          uri: lb://eureka-client-01
+          predicates:
+            - Path=/**
+
+        - id: service-fegin
+          uri: lb://service-fegin
+          predicates:
+              - Path=/**
+
+#        - id: config-server
+#          uri: lb://config-server
+#          predicates:
+#            - Path=/**
+#          filters:
+#            - name: RequestRateLimiter
+#              args:
+#                key-resolver: '#{@hostAddrKeyResolver}'
+#                redis-rate-limiter.replenishRate: 1
+#                redis-rate-limiter.burstCapacity: 3
+
+#  redis:
+#    host: 192.168.140.120
+#    port: 6379
+#    database: 0
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

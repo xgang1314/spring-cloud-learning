@@ -1,0 +1,13 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: nacos-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.140.120:8848
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: localhost:8081

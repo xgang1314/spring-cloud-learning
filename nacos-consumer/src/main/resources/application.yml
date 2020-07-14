@@ -1,0 +1,17 @@
+server:
+  port: 8763
+spring:
+  application:
+    name: nacos-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.140.120:8848
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: localhost:8081
+
+feign:
+  sentinel:
+    enable: true
